@@ -36,7 +36,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ secrets.repo-token }}
+    - ${{ inputs.repo-token }}
     - ${{ inputs.min-quality-grade }}
     - ${{ inputs.min-quality-score }}
     - ${{ inputs.max-defects-rate }}
