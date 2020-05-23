@@ -32,7 +32,7 @@ ${CODE_INSPECTOR_BIN} \
   --sha "${GITHUB_SHA}" \
   --ref "${GITHUB_REF}" \
   --project "${PROJECT_NAME}" \
-  --min-quality-score "${MAX_TIMEOUT_SEV}" \
+  --min-quality-score "${MIN_QUALITY_SCORE}" \
   --min-quality-grade "${MIN_QUALITY_GRADE}" \
   --max-defects-rate "${MAX_DEFECTS_RATE}" \
   --max-complex-functions-rate "${MAX_COMPLEX_FUNCTIONS_RATE}" \
