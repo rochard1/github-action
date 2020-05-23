@@ -1,0 +1,46 @@
+name: 'Code Inspector GitHub action'
+description: 'Ensure your code quality meet given standards'
+inputs:
+  repo-token:
+    description: 'Token to checkout the repository. Use ${{ secrets.GITHUB_TOKEN }}'
+    required: true
+  min-quality-grade:
+    description: 'Minimum grade. Valid options are EXCELLENT, GOOD, NEUTRAL, WARNING, CRITICAL. Leave blank to ignore.'
+    required: true
+    default: ''
+  min-quality-score:
+    description: 'Minimum quality score from 0 (worst) to 100 (best)'
+    required: true
+    default: '0'
+  max-defects-rate:
+    description: 'Maximum defect rate per line of code (e.g. 0.01 for 1 defect per 100 lines of code). Leave 0 to ignore.'
+    required: true
+    default: '0'
+  max-complex-functions-rate:
+    description: 'Maximum number of complex functions rate (e.g. number of complex functions / number of functions). Leave 0 to ignore.'
+    required: true
+    default: '0'
+  max-long-functions-rate:
+    description: 'Maximum number of long functions rate (e.g. number of long functions / number of functions). Leave 0 to ignore.'
+    required: true
+    default: '0'
+  project-name:
+    description: 'Project on code inspector. Will use the preferences of this analysis. Leave blank and no preferences are used'
+    required: true
+    default: ''
+  max-timeout-sec:
+    description: 'Timeout before giving up (in case analysis takes too long). Default is 10 minutes'
+    required: true
+    default: '600'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ secrets.repo-token }}
+    - ${{ inputs.min-quality-grade }}
+    - ${{ inputs.min-quality-score }}
+    - ${{ inputs.max-defects-rate }}
+    - ${{ inputs.max-complex-functions-rate }}
+    - ${{ inputs.max-long-functions-rate }}
+    - ${{ inputs.project-name }}
+    - ${{ inputs.max-timeout-sec }}
