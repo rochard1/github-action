@@ -1,13 +1,13 @@
 name: 'Code Inspector GitHub action'
 description: 'Ensure your code quality meet given standards'
 inputs:
-  repo-token:
+  repo_token:
     description: 'Token to checkout the repository.'
     required: true
-  code-inspector-access-key:
+  code_inspector_access_key:
     description: 'Access key on Code Inspector'
     required: true
-  code-inspector-secret-key:
+  code_inspector_secret_key:
     description: 'Secret key on Code Inspector'
     required: true
   min-quality-grade:
