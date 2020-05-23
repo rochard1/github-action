@@ -2,7 +2,7 @@ name: 'Code Inspector GitHub action'
 description: 'Ensure your code quality meet given standards'
 inputs:
   repo-token:
-    description: 'Token to checkout the repository. Use ${{ secrets.GITHUB_TOKEN }}'
+    description: 'Token to checkout the repository.'
     required: true
   min-quality-grade:
     description: 'Minimum grade. Valid options are EXCELLENT, GOOD, NEUTRAL, WARNING, CRITICAL. Leave blank to ignore.'
