@@ -4,6 +4,12 @@ inputs:
   repo-token:
     description: 'Token to checkout the repository.'
     required: true
+  code-inspector-access-key:
+    description: 'Access key on Code Inspector'
+    required: true
+  code-inspector-secret-key:
+    description: 'Secret key on Code Inspector'
+    required: true
   min-quality-grade:
     description: 'Minimum grade. Valid options are EXCELLENT, GOOD, NEUTRAL, WARNING, CRITICAL. Leave blank to ignore.'
     required: true
@@ -36,7 +42,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.repo-token }}
     - ${{ inputs.min-quality-grade }}
     - ${{ inputs.min-quality-score }}
     - ${{ inputs.max-defects-rate }}
