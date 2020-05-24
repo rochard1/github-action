@@ -105,7 +105,7 @@ Everything is set up 🎉
 
 Add a new commit and the Code Inspector engine will check if the new code meets your criteria.
 
-To visualize the results details, you can can use the [frontend](https://frontend.code-inspector.com),
+To visualize the results details, you can use the [frontend](https://frontend.code-inspector.com),
 our [command-line client](https://github.com/codeinspectorio/citool) 
 or use directly our [API](https://doc.code-inspector.com/docs/api/).
 
